@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Schoology Due Dates",
+  "version": "0.1.0",
+  "description": "Sets assignment due dates in Schoology.",
+  "content_scripts": [
+    {
+      "matches": ["https://*.schoology.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
