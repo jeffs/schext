@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Schoology Due Dates",
+  "name": "Teacher Companion for Schoology",
   "version": "0.1.0",
   "description": "Sets the default due time of new Schoology assignments.",
   "content_scripts": [
