@@ -1,0 +1,4 @@
+/node_modules/
+/var/
+/extension/*.js
+.DS_Store

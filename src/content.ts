@@ -4,20 +4,20 @@ const timeFields =
   "input[name='due_date[time]'], input[name$='[due][due_date][time]']";
 
 // The value each time field held when last checked.
-const lastSeen = new WeakMap();
+const lastSeen = new WeakMap<HTMLInputElement, string>();
 
 // Schoology fills unsaved due times with its default: asynchronously when a
 // date is entered, or before the field is first seen in forms opened from the
 // calendar. Saved times arrive in the HTML value attribute.
-function holdsSchoologyDefault(field) {
+function holdsSchoologyDefault(field: HTMLInputElement): boolean {
   if (field.value !== schoologyDefault) return false;
   const previous = lastSeen.get(field);
   return previous === "" ||
     (previous === undefined && !field.getAttribute("value"));
 }
 
-function check() {
-  for (const field of document.querySelectorAll(timeFields)) {
+function check(): void {
+  for (const field of document.querySelectorAll<HTMLInputElement>(timeFields)) {
     if (holdsSchoologyDefault(field)) {
       field.value = preferred;
       field.dispatchEvent(new Event("input", { bubbles: true }));
