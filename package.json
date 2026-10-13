@@ -2,10 +2,6 @@
   "name": "schoology-companion",
   "private": true,
   "type": "module",
-  "scripts": {
-    "build": "tsc --noEmit && esbuild src/content.ts --bundle --outdir=extension && esbuild src/options.ts --bundle --format=esm --outdir=extension",
-    "package": "npm run build && mkdir -p var && rm -f var/schoology-companion.zip && zip -r var/schoology-companion.zip extension"
-  },
   "devDependencies": {
     "@types/chrome": "^0.3.5",
     "esbuild": "^0.28.2",
