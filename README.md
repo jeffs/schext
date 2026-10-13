@@ -7,3 +7,9 @@ Sets the due time of new assignments to 8:25 a.m., or to the time chosen in the 
 3. Load the `extension` directory at `chrome://extensions` using "Load unpacked"
 
 Alternatively, you can manually run the commands from the [justfile](justfile).
+
+## License
+
+Copyright (c) 2026 Jeffrey Schwab and Yi Han. All rights reserved. See [LICENSE](LICENSE).
+
+The icon is "chalkboard-teacher" from [Tabler Icons](https://tabler.io/icons), available under the [MIT License](extension/icons/LICENSE).
