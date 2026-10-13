@@ -2,11 +2,22 @@
   "manifest_version": 3,
   "name": "Schoology Due Dates",
   "version": "0.1.0",
-  "description": "Defaults new Schoology due times to 8:25 AM.",
+  "description": "Sets the default due time of new Schoology assignments.",
   "content_scripts": [
     {
-      "matches": ["https://*.schoology.com/*"],
-      "js": ["content.js"]
+      "matches": [
+        "https://*.schoology.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
     }
-  ]
+  ],
+  "permissions": [
+    "storage"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  }
 }

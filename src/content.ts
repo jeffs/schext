@@ -1,5 +1,6 @@
+import { loadDueTime, onDueTimeChanged, toSchoology } from "./preference";
+
 const schoologyDefault = "11:59PM";
-const preferred = "08:25AM";
 const timeFields =
   "input[name='due_date[time]'], input[name$='[due][due_date][time]']";
 
@@ -16,7 +17,7 @@ function holdsSchoologyDefault(field: HTMLInputElement): boolean {
     (previous === undefined && !field.getAttribute("value"));
 }
 
-function check(): void {
+function check(preferred: string): void {
   for (const field of document.querySelectorAll<HTMLInputElement>(timeFields)) {
     if (holdsSchoologyDefault(field)) {
       field.value = preferred;
@@ -27,4 +28,8 @@ function check(): void {
   }
 }
 
-setInterval(check, 100);
+loadDueTime().then((time) => {
+  let preferred = toSchoology(time);
+  onDueTimeChanged((time) => preferred = toSchoology(time));
+  setInterval(() => check(preferred), 100);
+});
