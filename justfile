@@ -17,5 +17,5 @@ build: check
 [default]
 package: build
     mkdir -p var
-    zip -r var/schoology-companion.zip.new extension
+    cd extension && zip -r ../var/schoology-companion.zip.new . -x "*.DS_Store"
     mv var/schoology-companion.zip.new var/schoology-companion.zip
