@@ -1,0 +1,34 @@
+<style>
+  .markdown-alert { padding: 0.5em 1em; border-left: 0.25em solid; color: inherit; }
+  .markdown-alert > :last-child { margin-bottom: 0; }
+  .markdown-alert-title { font-weight: 600; }
+  .markdown-alert-note { border-color: #0969da; }
+  .markdown-alert-note .markdown-alert-title { color: #0969da; }
+  .markdown-alert-tip { border-color: #1a7f37; }
+  .markdown-alert-tip .markdown-alert-title { color: #1a7f37; }
+  .markdown-alert-important { border-color: #8250df; }
+  .markdown-alert-important .markdown-alert-title { color: #8250df; }
+  .markdown-alert-warning { border-color: #9a6700; }
+  .markdown-alert-warning .markdown-alert-title { color: #9a6700; }
+  .markdown-alert-caution { border-color: #d1242f; }
+  .markdown-alert-caution .markdown-alert-title { color: #d1242f; }
+</style>
+<script>
+  // Renders GitHub alert syntax (`> [!TIP]`), which kramdown leaves as plain blockquotes.
+  document.addEventListener("DOMContentLoaded", () => {
+    for (const quote of document.querySelectorAll("blockquote")) {
+      const paragraph = quote.firstElementChild;
+      const text = paragraph?.firstChild;
+      const match = text?.nodeType === Node.TEXT_NODE && text.data.match(/^\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*/);
+      if (!match) continue;
+      text.data = text.data.slice(match[0].length);
+      if (paragraph.textContent.trim() === "") paragraph.remove();
+      const kind = match[1].toLowerCase();
+      const title = document.createElement("p");
+      title.className = "markdown-alert-title";
+      title.textContent = kind[0].toUpperCase() + kind.slice(1);
+      quote.prepend(title);
+      quote.classList.add("markdown-alert", `markdown-alert-${kind}`);
+    }
+  });
+</script>

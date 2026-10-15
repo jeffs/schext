@@ -1,0 +1,9 @@
+title: Teacher Companion for Schoology
+exclude:
+  - node_modules
+  - src
+  - var
+  - justfile
+  - package.json
+  - package-lock.json
+  - tsconfig.json

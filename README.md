@@ -48,6 +48,6 @@ Build output is written to the `extension` folder of your working copy. Install 
 
 ## License
 
-Copyright (c) 2026 Jeffrey Schwab and Yi Han. All rights reserved. See [LICENSE](LICENSE).
+Copyright (c) 2026 Jeffrey Schwab and Yi Han. All rights reserved. See [LICENSE](https://github.com/jeffs/schext/blob/main/LICENSE).
 
-The icon is "chalkboard-teacher" from [Tabler Icons](https://tabler.io/icons), available under the [MIT License](extension/icons/LICENSE).
+The icon is "chalkboard-teacher" from [Tabler Icons](https://tabler.io/icons), available under the [MIT License](https://github.com/jeffs/schext/blob/main/extension/icons/LICENSE).
