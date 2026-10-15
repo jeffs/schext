@@ -22,25 +22,18 @@ First, put the extension on your computer:
 3. Move the `schoology-companion` folder to its permanent home.
    - Your `Documents` folder is a reasonable place to put it.
 
-Then, load the extension in Chrome:
+Then, load the extension in your browser:
 
-1. Copy the following URL into a new browser window:
-
+1. Copy the following URL into a new tab:
    ```
    chrome://extensions
    ```
+2. In the top right corner of that page, switch **Developer mode** on.  
+3. Near the top left corner, click **Load unpacked**.
+4. Choose the `schoology-companion` folder you created above.
+5. Reload any open Schoology tabs.
 
-2. In the top right corner of that page, switch Developer Mode on.  
-
-   <img src="assets/developer-mode.png" alt="screenshot of Developer Mode switch" width="200">
-
-3. Near the top left corner, click **Load Unpacked**.
-
-   <img src="assets/load-unpacked.png" alt="screenshot of Load Unpacked button" width="120">
-
-4. Reload any open Schoology tabs.
-
-To try the extension out, create a new assignment, then verify that the Due Time is 8:25 a.m. You can override the default time for new assignments by clicking this extension in your Chrome toolbar:
+To try the extension out, create a new assignment and then verify that its Due Time is 8:25 a.m. You can override the default time for new assignments by clicking this extension in your Chrome toolbar:
 
 <img src="assets/time-picker.png" alt="screenshot of time picker" width="335">
 
